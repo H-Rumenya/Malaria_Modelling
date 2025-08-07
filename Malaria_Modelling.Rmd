@@ -1,0 +1,81 @@
+---
+title: "Malaria_Modelling"
+author: "Hezron Rumenya"
+date: "2025-08-07"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+setwd("C:/Users/HRumenya/Documents/R_file/Malaria_Modelling")
+
+```
+# Install and load necessary libraries
+
+**Loading libraries**
+
+```{r}
+library(caret)         ## for training machine learning models
+library(psych)         ## for description of  data
+library(ggplot2)       ## for data visualization
+library(caretEnsemble) ## enables the creation of ensemble models
+library(tidyverse)     ## for data manipulation
+library(mlbench)       ## for benchmarking ML Models
+library(flextable)     ## to create and style tables
+library(mltools)       ## for hyperparameter tuning
+library(tictoc)        ## for determining the time taken for a model to run
+library(ROSE)          ## for random oversampling
+library(smotefamily)   ## for smote sampling
+library(ROCR)          ## for ROC curve
+library(pROC)          ## for visualizing, smoothing, and comparing ROC curves
+library(e1071)         ## for statistical modeling and  machine learning tasks(SVM)
+library(class)         ## for classification using k-Nearest Neighbors and other methods
+library(caTools)       ## for splitting data into training and testing sets
+library(MASS)          ## provides plotting functions and datasets
+library(ISLR)          ## for practical applications of statistical learning methods
+library(boot)          ## useful for performing bootstrap resampling
+library(cvTools)       ## contains functions for cross-validation, bootstrapping, & other resampling methods
+library(iml)           ## provide tools to analyze and interpret machine learning models
+library(lime)          ## powerful tools for interpreting machine learning models
+library(DALEX)         ## powerful tool for interpreting machine learning models. 
+library(rio)           ## for easy data import, export(saving) and conversion
+library(esquisse)      ## GUI tool that allows users to easily create ggplot2 plots interactively
+```
+```{r}
+show_unsupported_formats()
+```
+# Load and prepare data/Exporatory of the dataset
+```{r}
+library(rio) ## for easy data import, export(saving) and conversion
+
+data = import("Data/Malaria Dataset.csv")
+```
+
+
+```{r}
+print(head(data))          # for the 1st few rows in the dataset
+print(tail(data))          # for the last few rows in the dataset
+```
+
+## R Markdown
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r cars}
+summary(cars)
+```
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
